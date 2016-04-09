@@ -1,0 +1,60 @@
+[submodule "bundle/jshint"]
+	path = bundle/jshint
+	url = https://github.com/walm/jshint.vim
+[submodule "bundle/vim-airline"]
+	path = bundle/vim-airline
+	url = https://github.com/bling/vim-airline.git
+[submodule "bundle/vim-commentary"]
+	path = bundle/vim-commentary
+	url = https://github.com/tpope/vim-commentary.git
+[submodule "bundle/vim-fugitive"]
+	path = bundle/vim-fugitive
+	url = https://github.com/tpope/vim-fugitive.git
+[submodule "bundle/vim-surround"]
+	path = bundle/vim-surround
+	url = https://github.com/tpope/vim-surround.git
+[submodule "bundle/nerdtree"]
+	path = bundle/nerdtree
+	url = https://github.com/scrooloose/nerdtree
+[submodule "bundle/command-t"]
+	path = bundle/command-t
+	url = https://github.com/wincent/Command-T.git
+[submodule "bundle/mru.vim"]
+	path = bundle/mru.vim
+	url = https://github.com/vim-scripts/mru.vim.git
+[submodule "bundle/tagbar"]
+	path = bundle/tagbar
+	url = https://github.com/majutsushi/tagbar.git
+[submodule "bundle/emmet-vim"]
+	path = bundle/emmet-vim
+	url = https://github.com/mattn/emmet-vim
+[submodule "bundle/enchanted-vim"]
+	path = bundle/enchanted-vim
+	url = https://github.com/vim-scripts/Enchanted-Vim.git
+[submodule "bundle/crdispatcher"]
+	path = bundle/crdispatcher
+	url = https://github.com/coot/CRDispatcher.git
+[submodule "bundle/ultisnips"]
+	path = bundle/ultisnips
+	url = git://github.com/SirVer/ultisnips.git
+[submodule "bundle/snippets"]
+	path = bundle/snippets
+	url = https://github.com/honza/vim-snippets.git
+[submodule "bundle/supertab"]
+	path = bundle/supertab
+	url = https://github.com/ervandew/supertab.git
+[submodule "bundle/autopep8"]
+	path = bundle/autopep8
+	url = https://github.com/tell-k/vim-autopep8
+[submodule "bundle/gitgutter"]
+	path = bundle/gitgutter
+	url = https://github.com/airblade/vim-gitgutter
+[submodule "bundle/delimitMate"]
+	path = bundle/delimitMate
+	url = https://github.com/Raimondi/delimitMate.git
+[submodule "bundle/limelight.vim"]
+	path = bundle/limelight.vim
+	url = https://github.com/junegunn/limelight.vim.git
+[submodule "bundle/neocomplete"]
+	path = bundle/neocomplete
+	url = https://github.com/Shougo/neocomplete.vim.git
