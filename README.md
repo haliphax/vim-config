@@ -23,4 +23,15 @@ $ ln -s ~/.vim/vimrc ~/.vimrc
 $ ln -s ~/.vim/gvimrc ~/.gvimrc
 ````
 
+## Dependencies
+
+I use a handful of linting and formatting utilities that are not bundled with
+any vim plugins:
+
+- php (CLI version)
+- xmllint
+- pylint
+
+...
+
 Have fun, you crazy kids. Don't stay out too late.
