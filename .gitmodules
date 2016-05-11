@@ -58,3 +58,9 @@
 [submodule "bundle/neocomplete"]
 	path = bundle/neocomplete
 	url = https://github.com/Shougo/neocomplete.vim.git
+[submodule "bundle/asp.net"]
+	path = bundle/asp.net
+	url = https://github.com/vim-scripts/asp.net.git
+[submodule "bundle/aspvbs"]
+	path = bundle/aspvbs
+	url = https://github.com/vim-scripts/aspvbs.vim.git
