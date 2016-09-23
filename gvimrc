@@ -18,3 +18,10 @@ nmap <C-v> "+P<ESC>l
 set guioptions+=rb	" force scrollbars
 set gfn=DejaVu\ Sans\ Mono\ 11
 colors solarized
+
+"--- windows settings ---
+
+if has('win32') || has('win64')
+	GitGutterDisable
+	set gfn=DejaVu_Sans_Mono:h11:cANSI:qDRAFT
+endif
