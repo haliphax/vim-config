@@ -1,8 +1,8 @@
 "--- key mappings ---
 
-" edit .vimrc
+" edit .gvimrc
 nnoremap <leader>egv :tabnew $MYGVIMRC<cr>
-" source .vimrc
+" source .gvimrc
 nnoremap <leader>sgv :source $MYGVIMRC<cr>
 " CTRL-C copy
 vmap <C-c> "+y<ESC>
