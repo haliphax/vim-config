@@ -10,7 +10,7 @@ vmap <C-c> "+y<ESC>
 vmap <C-x> "+c<ESC>
 " CTRL-V paste
 vmap <C-v> c<ESC>"+Pl
-imap <C-v> <ESC>"+Pli
+imap <C-v> <ESC>"+pli
 nmap <C-v> "+P<ESC>l
 
 "--- options ---

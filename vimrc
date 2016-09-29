@@ -60,7 +60,7 @@ nnoremap <F9> za
 onoremap <F9> <C-C>za
 vnoremap <F9> zf
 " hide search highlight
-nnoremap <leader>/ :noh<cr><esc>
+nnoremap <esc> :noh<cr><esc>
 " add semicolon to end of line
 nnoremap <leader>; mqA;<esc>`q
 " grep for word under cursor
@@ -99,6 +99,8 @@ nnoremap <leader>C :NERDTreeClose<cr>:%bd<cr>:e#<cr>
 " limelight
 nnoremap gl :Limelight!!0.8<cr>
 xnoremap gl :Limelight!!0.8<cr>
+" change working dir of window to current file
+nnoremap <leader>cd :lcd %:p:h<cr>
 
 " vp won't replace paste buffer
 function! RestoreRegister()
