@@ -101,6 +101,9 @@ nnoremap gl :Limelight!!0.8<cr>
 xnoremap gl :Limelight!!0.8<cr>
 " change working dir of window to current file
 nnoremap <leader>cd :lcd %:p:h<cr>
+" commentary
+vnoremap \\ :Commentary<cr>
+nnoremap \\ :Commentary<cr>
 
 " vp won't replace paste buffer
 function! RestoreRegister()
@@ -141,10 +144,6 @@ let g:VeryMagicSubstitute = 1
 let g:VeryMagicGlobal = 1
 " pylint
 let g:pylint_onwrite = 0
-" make YCM compatible with UltiSnips (using supertab)
-"let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
-"let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
-"let g:SuperTabDefaultCompletionType = '<C-n>'
 " better key bindings for UltiSnipsExpandTrigger
 let g:UltiSnipsExpandTrigger = "<tab>"
 let g:UltiSnipsJumpForwardTrigger = "<tab>"
