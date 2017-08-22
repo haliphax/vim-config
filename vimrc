@@ -26,7 +26,9 @@ set mouse=a             " use the mouse everywhere
 set nobackup            " don't keep a backup of files
 set noswf               " no swap file
 set nowrap              " don't wrap lines
-set si                  " smart indent
+set cindent             " smart indent
+set cinkeys-=0#         " don't remove indent with # nor 0
+set indentkeys-=0#
 set fdm=indent          " fold by indent
 set foldlevelstart=20   " fold all by default
 set t_Co=256            " 256 colors
@@ -34,6 +36,7 @@ set bg=dark             " dark background
 set omnifunc=syntaxcomplete#Complete    " omni complete
 set backspace=indent,eol,start          " backspace fix
 set cursorline          " highlight current line
+set cursorcolumn        " highlight current column
 set colorcolumn=80      " column marker at 80th column
 
 " set leader to ,
@@ -59,6 +62,11 @@ inoremap <F9> <C-O>za
 nnoremap <F9> za
 onoremap <F9> <C-C>za
 vnoremap <F9> zf
+" arrow keys
+nnoremap <Esc>A <up>
+nnoremap <Esc>B <down>
+nnoremap <Esc>C <right>
+nnoremap <Esc>D <left>
 " hide search highlight
 nnoremap <esc> :noh<cr><esc>
 " add semicolon to end of line
@@ -121,7 +129,10 @@ vmap <silent> <expr> p <sid>Repl()
 aug hx
     au!
     " highlighting of last column
-    au BufReadPost * highlight ColorColumn ctermbg=8
+    au BufReadPost * highlight ColorColumn ctermbg=darkred
+    " highlighting of row and column
+    au BufReadPost * highlight CursorColumn ctermbg=8
+    au BufReadPost * highlight CursorLine ctermbg=8
     " remember where we left off in a file
     au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")|execute("normal `\"")|endif
     " use xmllint as indent command while editing xml buffers
@@ -132,7 +143,7 @@ aug hx
     au FileType php setlocal makeprg=php\ -l\ %
     au FileType php nnoremap <buffer> <leader>l :execute("make!")<cr>:copen<cr>
     " pylint mapping for python files
-    au FileType python set makeprg=pylint\ --reports=n\ --msg-template=\"{path}:{line}:\ {msg_id}\ {symbol},\ {obj}\ {msg}\"\ %
+    au FileType python set makeprg=pylint\ --reports=n\ --msg-template=\"{path}:{line}:\ {msg_id}\ {symbol},\ {obj}\ {msg}\U"\ %
     au FileType python set errorformat=%f:%l:\ %m
     au Filetype python nnoremap <buffer> <leader>l :execute("make!")<cr>:copen<cr>
 aug END
