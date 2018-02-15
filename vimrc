@@ -145,7 +145,7 @@ aug hx
     au FileType php setlocal makeprg=php\ -l\ %
     au FileType php nnoremap <buffer> <leader>l :execute("make!")<cr>:copen<cr>
     " pylint mapping for python files
-    au FileType python set makeprg=pylint\ --reports=n\ --msg-template=\"{path}:{line}:\ {msg_id}\ {symbol},\ {obj}\ {msg}\U"\ %
+    au FileType python set makeprg=pylint\ --reports=n\ --msg-template=\"{path}:{line}:\ {msg_id}\ {symbol},\ {obj}\ {msg}\"\ %
     au FileType python set errorformat=%f:%l:\ %m
     au Filetype python nnoremap <buffer> <leader>l :execute("make!")<cr>:copen<cr>
 aug END
