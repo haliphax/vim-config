@@ -38,6 +38,7 @@ set backspace=indent,eol,start          " backspace fix
 set cursorline          " highlight current line
 set cursorcolumn        " highlight current column
 set colorcolumn=80      " column marker at 80th column
+set textwidth=79		" wrap at 80 when hard-formatting text
 
 " set leader to ,
 let mapleader=","
@@ -105,8 +106,9 @@ vnoremap < :<<cr>gv
 " close all but this buffer
 nnoremap <leader>C :NERDTreeClose<cr>:%bd<cr>:e#<cr>
 " limelight
-nnoremap gl :Limelight!!0.8<cr>
-xnoremap gl :Limelight!!0.8<cr>
+nnoremap gl :Limelight!!<cr>
+xnoremap gl :Limelight!!<cr>
+let g:limelight_conceal_ctermfg = 'darkgray'
 " change working dir of window to current file
 nnoremap <leader>cd :lcd %:p:h<cr>
 " commentary
