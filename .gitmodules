@@ -64,3 +64,6 @@
 [submodule "bundle/aspvbs"]
 	path = bundle/aspvbs
 	url = https://github.com/vim-scripts/aspvbs.vim.git
+[submodule "bundle/dracula-theme"]
+	path = bundle/dracula-theme
+	url = https://github.com/dracula/vim.git

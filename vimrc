@@ -97,8 +97,8 @@ vnoremap < :<<cr>gv
 " close all but this buffer
 nnoremap <leader>C :NERDTreeClose<cr>:%bd<cr>:e#<cr>
 " limelight
-nnoremap gl :Limelight!!0.8<cr>
-xnoremap gl :Limelight!!0.8<cr>
+nnoremap <leader>L :Limelight!!0.8<cr>
+xnoremap <leader>L :Limelight!!0.8<cr>
 " change working dir of window to current file
 nnoremap <leader>cd :lcd %:p:h<cr>
 " commentary
@@ -171,6 +171,7 @@ filetype indent on
 
 " colors
 colors ir_black
+
 " gitgutter
 hi SignColumn ctermbg=black
 " hi GitGutterAdd ctermbg=black ctermfg=green
