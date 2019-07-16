@@ -16,7 +16,7 @@ $ git clone --recursive --single-branch --depth 1 <repo URL> ~/.vim
 
 The configuration files for vim and gvim are now in the `.vim` subdirectory
 of your `$HOME`, but for them to take effect, they need to be one level higher.
-We can resolve this with symlinks:
+*(Note: This may no longer be necessary.)* We can resolve this with symlinks:
 
 ````
 $ ln -s ~/.vim/vimrc ~/.vimrc

@@ -26,7 +26,9 @@ set mouse=a             " use the mouse everywhere
 set nobackup            " don't keep a backup of files
 set noswf               " no swap file
 set nowrap              " don't wrap lines
-set si                  " smart indent
+set cindent             " smart indent
+set cinkeys-=0#         " don't remove indent with # nor 0
+set indentkeys-=0#
 set fdm=indent          " fold by indent
 set foldlevelstart=20   " fold all by default
 set t_Co=256            " 256 colors
@@ -34,7 +36,9 @@ set bg=dark             " dark background
 set omnifunc=syntaxcomplete#Complete    " omni complete
 set backspace=indent,eol,start          " backspace fix
 set cursorline          " highlight current line
+set cursorcolumn        " highlight current column
 set colorcolumn=80      " column marker at 80th column
+set textwidth=79		" wrap at 80 when hard-formatting text
 
 " set leader to ,
 let mapleader=","
@@ -59,6 +63,11 @@ inoremap <F9> <C-O>za
 nnoremap <F9> za
 onoremap <F9> <C-C>za
 vnoremap <F9> zf
+" arrow keys
+nnoremap <Esc>A <up>
+nnoremap <Esc>B <down>
+nnoremap <Esc>C <right>
+nnoremap <Esc>D <left>
 " hide search highlight
 nnoremap <esc> :noh<cr><esc>
 " add semicolon to end of line
@@ -97,8 +106,9 @@ vnoremap < :<<cr>gv
 " close all but this buffer
 nnoremap <leader>C :NERDTreeClose<cr>:%bd<cr>:e#<cr>
 " limelight
-nnoremap <leader>L :Limelight!!0.8<cr>
-xnoremap <leader>L :Limelight!!0.8<cr>
+nnoremap gl :Limelight!!<cr>
+xnoremap gl :Limelight!!<cr>
+let g:limelight_conceal_ctermfg = 'darkgray'
 " change working dir of window to current file
 nnoremap <leader>cd :lcd %:p:h<cr>
 " commentary
@@ -121,7 +131,10 @@ vmap <silent> <expr> p <sid>Repl()
 aug hx
     au!
     " highlighting of last column
-    au BufReadPost * highlight ColorColumn ctermbg=8
+    au BufReadPost * highlight ColorColumn ctermbg=darkred
+    " highlighting of row and column
+    au BufReadPost * highlight CursorColumn ctermbg=8
+    au BufReadPost * highlight CursorLine ctermbg=8
     " remember where we left off in a file
     au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")|execute("normal `\"")|endif
     " use xmllint as indent command while editing xml buffers
