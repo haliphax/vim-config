@@ -170,7 +170,7 @@ filetype plugin on
 filetype indent on
 
 " colors
-colors ir_black
+colors dracula
 
 " gitgutter
 hi SignColumn ctermbg=black
