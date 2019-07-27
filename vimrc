@@ -131,10 +131,10 @@ vmap <silent> <expr> p <sid>Repl()
 aug hx
     au!
     " highlighting of last column
-    au BufReadPost * highlight ColorColumn ctermbg=darkred
+    au BufReadPost * highlight ColorColumn ctermbg=0 guibg=#111111
     " highlighting of row and column
-    au BufReadPost * highlight CursorColumn ctermbg=8
-    au BufReadPost * highlight CursorLine ctermbg=8
+    au BufReadPost * highlight CursorColumn ctermbg=8 guibg=#44475a
+    au BufReadPost * highlight CursorLine ctermbg=8 guibg=#44475a
     " remember where we left off in a file
     au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")|execute("normal `\"")|endif
     " use xmllint as indent command while editing xml buffers
