@@ -28,12 +28,6 @@
 [submodule "bundle/emmet-vim"]
 	path = bundle/emmet-vim
 	url = https://github.com/mattn/emmet-vim
-[submodule "bundle/enchanted-vim"]
-	path = bundle/enchanted-vim
-	url = https://github.com/vim-scripts/Enchanted-Vim.git
-[submodule "bundle/crdispatcher"]
-	path = bundle/crdispatcher
-	url = https://github.com/coot/CRDispatcher.git
 [submodule "bundle/ultisnips"]
 	path = bundle/ultisnips
 	url = https://github.com/SirVer/ultisnips.git
