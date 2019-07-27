@@ -2,42 +2,45 @@
 call pathogen#infect()
 call pathogen#helptags()
 
+" colors
+colors dracula
+
 "--- settings ---
 
-set enc=utf-8           " default encoding
-set history=100         " # of commands to remember
-set incsearch           " incremental search
-set laststatus=2        " keep status bar even for 1 window
-set hlsearch            " highlight search results
-set pastetoggle=<F2>    " F2 to toggle PASTE mode
-set ruler               " show cursor position, etc.
-set scrolloff=3         " vertical scroll margin
-set siso=10             " horizontal scroll margin
-set shiftwidth=4        " use 4 spaces for tabs
-set tabstop=4           " ^
-set number              " show numbers
-set relativenumber      " relative numbers mode
-set nuw=5               " width of numbers column
-set ignorecase          " ignore case when searching
-set smartcase           " ^ unless uppercase is present in search string
-set lazyredraw          " don't redraw while executing macros
-set magic               " for regex searching
-set mouse=a             " use the mouse everywhere
-set nobackup            " don't keep a backup of files
-set noswf               " no swap file
-set nowrap              " don't wrap lines
-set cindent             " smart indent
-set cinkeys-=0#         " don't remove indent with # nor 0
+set enc=utf-8			" default encoding
+set history=100			" # of commands to remember
+set incsearch			" incremental search
+set laststatus=2		" keep status bar even for 1 window
+set hlsearch			" highlight search results
+set pastetoggle=<F2>	" F2 to toggle PASTE mode
+set ruler				" show cursor position, etc.
+set scrolloff=3			" vertical scroll margin
+set siso=10				" horizontal scroll margin
+set shiftwidth=4		" use 4 spaces for tabs
+set tabstop=4			" ^
+set number				" show numbers
+set relativenumber		" relative numbers mode
+set nuw=5				" width of numbers column
+set ignorecase			" ignore case when searching
+set smartcase			" ^ unless uppercase is present in search string
+set lazyredraw			" don't redraw while executing macros
+set magic				" for regex searching
+set mouse=a				" use the mouse everywhere
+set nobackup			" don't keep a backup of files
+set noswf				" no swap file
+set nowrap				" don't wrap lines
+set cindent				" smart indent
+set cinkeys-=0#			" don't remove indent with # nor 0
 set indentkeys-=0#
-set fdm=indent          " fold by indent
-set foldlevelstart=20   " fold all by default
-set t_Co=256            " 256 colors
-set bg=dark             " dark background
-set omnifunc=syntaxcomplete#Complete    " omni complete
-set backspace=indent,eol,start          " backspace fix
-set cursorline          " highlight current line
-set cursorcolumn        " highlight current column
-set colorcolumn=80      " column marker at 80th column
+set fdm=indent			" fold by indent
+set foldlevelstart=20	" fold all by default
+set t_Co=256			" 256 colors
+set bg=dark				" dark background
+set omnifunc=syntaxcomplete#Complete	" omni complete
+set backspace=indent,eol,start			" backspace fix
+set cursorline			" highlight current line
+set cursorcolumn		" highlight current column
+set colorcolumn=80		" column marker at 80th column
 set textwidth=79		" wrap at 80 when hard-formatting text
 
 " set leader to ,
@@ -117,37 +120,37 @@ nnoremap \\ :Commentary<cr>
 
 " vp won't replace paste buffer
 function! RestoreRegister()
-    let @" = s:restore_reg
-    return ''
+	let @" = s:restore_reg
+	return ''
 endfunction
 function! s:Repl()
-    let s:restore_reg = @"
-    return "p@=RestoreRegister()\<cr>"
+	let s:restore_reg = @"
+	return "p@=RestoreRegister()\<cr>"
 endfunction
 vmap <silent> <expr> p <sid>Repl()
 
 "--- autocommands ---
 
 aug hx
-    au!
-    " highlighting of last column
-    au BufReadPost * highlight ColorColumn ctermbg=0 guibg=#111111
-    " highlighting of row and column
-    au BufReadPost * highlight CursorColumn ctermbg=8 guibg=#44475a
-    au BufReadPost * highlight CursorLine ctermbg=8 guibg=#44475a
-    " remember where we left off in a file
-    au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")|execute("normal `\"")|endif
-    " use xmllint as indent command while editing xml buffers
-    au FileType xml setlocal equalprg=xmllint\ --format\ --recover\ -\ 2>/dev/null
-    " JSHint keymapping for JS files
-    au FileType javascript nnoremap <buffer> <leader>l :JSHint<cr>
-    " php -l keymapping for PHP files
-    au FileType php setlocal makeprg=php\ -l\ %
-    au FileType php nnoremap <buffer> <leader>l :execute("make!")<cr>:copen<cr>
-    " pylint mapping for python files
-    au FileType python set makeprg=pylint\ --reports=n\ --msg-template=\"{path}:{line}:\ {msg_id}\ {symbol},\ {obj}\ {msg}\"\ %
-    au FileType python set errorformat=%f:%l:\ %m
-    au Filetype python nnoremap <buffer> <leader>l :execute("make!")<cr>:copen<cr>
+	au!
+	" highlighting of last column
+	au BufReadPost * highlight ColorColumn ctermbg=0 guibg=#111111
+	" highlighting of row and column
+	au BufReadPost * highlight CursorColumn ctermbg=8 guibg=#44475a
+	au BufReadPost * highlight CursorLine ctermbg=8 guibg=#44475a
+	" remember where we left off in a file
+	au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")|execute("normal `\"")|endif
+	" use xmllint as indent command while editing xml buffers
+	au FileType xml setlocal equalprg=xmllint\ --format\ --recover\ -\ 2>/dev/null
+	" JSHint keymapping for JS files
+	au FileType javascript nnoremap <buffer> <leader>l :JSHint<cr>
+	" php -l keymapping for PHP files
+	au FileType php setlocal makeprg=php\ -l\ %
+	au FileType php nnoremap <buffer> <leader>l :execute("make!")<cr>:copen<cr>
+	" pylint mapping for python files
+	au FileType python set makeprg=pylint\ --reports=n\ --msg-template=\"{path}:{line}:\ {msg_id}\ {symbol},\ {obj}\ {msg}\"\ %
+	au FileType python set errorformat=%f:%l:\ %m
+	au Filetype python nnoremap <buffer> <leader>l :execute("make!")<cr>:copen<cr>
 aug END
 
 "--- options ---
@@ -181,9 +184,6 @@ syntax enable
 " allow specific types of plugins to be loaded
 filetype plugin on
 filetype indent on
-
-" colors
-colors dracula
 
 " gitgutter
 hi SignColumn ctermbg=black
