@@ -18,8 +18,6 @@ nmap <C-v> "+P<ESC>l
 set guioptions +=bgkrt
 set guioptions -=T
 
-colors dracula
-
 "--- windows vs. linux settings ---
 
 if has('win32') || has('win64')
