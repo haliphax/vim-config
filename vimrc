@@ -2,9 +2,6 @@
 call pathogen#infect()
 call pathogen#helptags()
 
-" colors
-colors dracula
-
 "--- settings ---
 
 set enc=utf-8			" default encoding
@@ -192,5 +189,8 @@ hi SignColumn ctermbg=black
 " hi GitGutterDelete ctermbg=black ctermfg=red
 " hi GitGutterLineRemovedFirstLine ctermbg=black ctermfg=red
 " hi GitGutterLineModifiedRemoved ctermbg=black ctermfg=yellow
+
+" colors
+colors dracula
 
 :noh
